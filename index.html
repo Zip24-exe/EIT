@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NH EIT - 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="header-top">
+        <button
+          type="button"
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Switch to dark mode"
+        >
+          Dark Mode
+        </button>
+      </div>
+      <h1>NH EIT - 2026</h1>
+    </header>
+
+    <main>
+      <form id="eit-form" novalidate>
+        <div class="field">
+          <label for="category">Installation Type</label>
+          <select id="category" name="category" required>
+            <option value="">Select an installation type</option>
+          </select>
+          <p id="category-error" class="field-error" hidden></p>
+        </div>
+
+        <div id="amount-field" class="field" hidden>
+          <label for="amount" id="amount-label">(input the M2)</label>
+          <input
+            type="text"
+            id="amount"
+            name="amount"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder="m²"
+          >
+          <p id="amount-error" class="field-error" hidden></p>
+        </div>
+
+        <div id="oiled-field" class="field" hidden>
+          <span class="field-label">Oiled</span>
+          <div class="choice-group" role="radiogroup" aria-label="Oiled">
+            <label class="choice-option">
+              <input type="radio" name="oiled" value="yes">
+              Yes
+            </label>
+            <label class="choice-option">
+              <input type="radio" name="oiled" value="no">
+              No
+            </label>
+          </div>
+          <p id="oiled-error" class="field-error" hidden></p>
+        </div>
+
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+
+        <button type="submit" class="calculate-btn">Calculate</button>
+      </form>
+
+      <section id="results" class="results" hidden>
+        <h2>Days per resource</h2>
+        <div class="result-card">
+          <span id="result-label" class="result-label"></span>
+          <span id="result-value" class="result-value"></span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
