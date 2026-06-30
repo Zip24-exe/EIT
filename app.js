@@ -39,25 +39,25 @@ const CATEGORIES = [
     label: 'LVT - Random Linear - Floating',
     divisor: 24,
     unit: 'm²',
-    showOiled: true,
+    showOiled: false,
   },
   {
     label: 'LVT - Random Linear - Gluedown',
     divisor: 16,
     unit: 'm²',
-    showOiled: true,
+    showOiled: false,
   },
   {
     label: 'LVT - Herringbone - Floating',
     divisor: 12,
     unit: 'm²',
-    showOiled: true,
+    showOiled: false,
   },
   {
     label: 'LVT - Chevron - Floating',
     divisor: 12,
     unit: 'm²',
-    showOiled: true,
+    showOiled: false,
   },
   {
     label: 'Custom Pattern',
@@ -156,7 +156,7 @@ function shouldShowOiled(category) {
     return false;
   }
 
-  if (category.label === 'Skirting') {
+  if (category.label === 'Skirting' || category.label.startsWith('LVT -')) {
     return false;
   }
 
