@@ -220,9 +220,12 @@ header h1 {
 
 .results {
   margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.results h2 {
+.result-block h2 {
   margin: 0 0 12px;
   font-size: 1.05rem;
   font-weight: 600;
