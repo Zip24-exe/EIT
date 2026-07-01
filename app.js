@@ -112,6 +112,8 @@ const formError = document.getElementById('form-error');
 const resultsSection = document.getElementById('results');
 const resultLabel = document.getElementById('result-label');
 const resultValue = document.getElementById('result-value');
+const teamResultLabel = document.getElementById('team-result-label');
+const teamResultValue = document.getElementById('team-result-value');
 const themeToggle = document.getElementById('theme-toggle');
 
 function populateCategories() {
@@ -263,6 +265,10 @@ function formatResult(value) {
   return String(value);
 }
 
+function calculateDaysPerTeam(days) {
+  return Math.ceil(days / 2);
+}
+
 function clearErrors() {
   formError.hidden = true;
   formError.textContent = '';
@@ -315,6 +321,8 @@ function handleCalculate(event) {
 
     resultLabel.textContent = category.label;
     resultValue.textContent = formatResult(days);
+    teamResultLabel.textContent = category.label;
+    teamResultValue.textContent = formatResult(calculateDaysPerTeam(days));
     resultsSection.hidden = false;
   } catch {
     formError.textContent = `Cannot divide by zero for ${category.label}.`;
