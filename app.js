@@ -135,9 +135,9 @@ function getSelectedCategory() {
 
 function getAmountLabel(unit) {
   if (unit === 'lm') {
-    return 'Add (input the lm)';
+    return '(input the lm)';
   }
-  return 'Add (input the M2)';
+  return '(input the M2)';
 }
 
 function getEmptyAmountMessage(unit) {
